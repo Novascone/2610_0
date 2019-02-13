@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
   <head>
-  	<link rel="stylesheet" type="text/css" href="shared.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/shared.css'%}">
 
      <meta charset="utf-8"/>
      <link rel="stylesheet" href="style.css"/>
@@ -25,8 +26,8 @@
 
   	<h1 id= "main">Bio</h1>
   	 	<ul>
-      <li><a href="tips.html">Tips</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="tips">Tips</a></li>
+      <li><a href=".">Blog</a></li>
     </ul>
 
   	<img src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg"
@@ -54,6 +55,11 @@
   	/>
   	<div>Skydiving</div>
 
+<p>
+
+ {{now}}
+ 
+</p>
 
 
 

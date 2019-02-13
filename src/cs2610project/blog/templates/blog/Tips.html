@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+ {% load static %}
   <head>
-    <link rel="stylesheet" type="text/css" href="shared.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/shared.css'%}">
      <meta charset="utf-8"/>
      <link rel="stylesheet" href="style.css"/>
      <title>Tips</title>
@@ -26,8 +27,8 @@
   <body class ="bg-dark text-white">
     <h1 id="main">Tips</h1>
   	<ul>
-      <li><a href="bio.html">Bio</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="bio">Bio</a></li>
+      <li><a href=".">Blog</a></li>
     </ul>
 
   	<h1>Tips</h1>
@@ -51,5 +52,11 @@
   		</tbody>
 
   	</table>
+    <p>
+
+ {{now}}
+ 
+</p>
+
   </body>
 </html>
