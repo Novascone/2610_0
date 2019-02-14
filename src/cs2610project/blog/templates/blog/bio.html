@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/shared.css'%}">
 
      <meta charset="utf-8"/>
-     <link rel="stylesheet" href="style.css"/>
      <title>Bio</title>
   <style> 
    
@@ -26,8 +25,8 @@
 
   	<h1 id= "main">Bio</h1>
   	 	<ul>
-      <li><a href="tips">Tips</a></li>
-      <li><a href=".">Blog</a></li>
+      <li><a href="{% url 'tips'%}">Tips</a></li>
+      <li><a href="{% url 'index'%}">Blog</a></li>
     </ul>
 
   	<img src="{% static "blog/images/sheep.jpg" %}" alt="sheep"/>

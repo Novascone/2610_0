@@ -4,7 +4,6 @@
   <head>
     <link rel="stylesheet" type="text/css" href="{% static 'blog/shared.css'%}">
      <meta charset="utf-8"/>
-     <link rel="stylesheet" href="style.css"/>
      <title>Tips</title>
      <style> 
      table 
@@ -27,8 +26,8 @@
   <body class ="bg-dark text-white">
     <h1 id="main">Tips</h1>
   	<ul>
-      <li><a href="bio">Bio</a></li>
-      <li><a href=".">Blog</a></li>
+      <li><a href="{% url 'bio'%}">Bio</a></li>
+      <li><a href="{% url 'index'%}">Blog</a></li>
     </ul>
 
   	<h1>Tips</h1>
