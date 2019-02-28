@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static %}
+  <head>
+     <meta charset="utf-8"/>
+     <title>Archive</title>
+
+     <link rel="stylesheet" type="text/css" href="{% static 'blog/shared.css' %}">
+  </head>
+  <body class = "bg-dark text-white">
+      <ul>
+      <li><a href="{% url 'blog:bloghome'%}">Home</a></li>
+    </ul>
+
+  	{% if last %}
+  		{% for blog in last %}
+    		<h1><a href="{% url 'blog:entry' blog.id %}">{{ blog.title }}</a></h1>
+    		<div>{{blog.post_date}}</div>
+    		<p>{{blog.content|truncatewords:200}}</p>
+    		<div>There are{{blog.comment_set.count}} comments </div>
+  		{% endfor %}
+	  {% else %}
+  		<h1>No more blogs</h1>
+		{% endif %}
+  </body>
+</html>

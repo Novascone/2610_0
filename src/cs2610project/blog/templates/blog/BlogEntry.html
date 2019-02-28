@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+     <meta charset="utf-8"/>
+     <title>Entry</title>
+     <link rel="stylesheet" type="text/css" href="{% static 'blog/shared.css' %}">
+     
+  </head>
+  <body class ="bg-dark text-white">
+      <ul>
+      <li><a href="{% url 'blog:archive'%}">Archive</a></li>
+      <li><a href="{% url 'blog:bloghome'%}">Home</a></li>
+    </ul>
+
+  	<h1>{{blog.title}}</h1>
+  	<div>{{blog.authorname}} -- {{blog.post_date}}</div>
+  	<p>{{ blog.content}}</p>
+
+  	{% for comment in blog.comment_set.all %}
+  	<dir>{{ comment.nickname }} -- {{comment.email}} -- {{comment.post_date}}</dir>
+  	<p>{{ comment.content }}</p>
+  	{% endfor %}
+
+  	<form action = "{% url 'blog:postComment' blog.id %}" method="POST">
+  	{%csrf_token %}
+  	<header>
+  		<h2>Post Comment</h2>
+  	</header>
+  	<div> 
+  		<label for="nickname">Nickname:</label>
+  		<input type="text" id="nickname" name="nickname">
+
+  		<label for="email">Email:</label>
+  		<input type="email" id="email" name="email">
+  	</div>
+  	<div>
+  		<label for="content">Comment:</label>
+  		<textarea id ="content" name="content"></textarea>
+  	</div>
+  	<div>
+  		<button id="submission" type="submit">Submit Comment</button>
+  	</div>
+  </form>
+  </body>
+</html>
